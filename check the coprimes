@@ -1,0 +1,36 @@
+#include <stdio.h>
+#include<iostream>
+using namespace std;
+long long int gcd(long long int a,long long int b);
+long long int coprime(long long int n);
+int main()
+{
+    int t;
+    long long int n,n2;
+    cin>>t;
+    while(t--)
+    {
+    cin>>n;
+    coprime(n);
+    }
+    return 0;
+}
+long long int coprime(long long int n)
+{
+    for(long long int i=n/2;i>=0;i--)
+    {
+        if(gcd(n,i)==1)
+        {
+            cout<<i<<endl;
+            break;
+        }
+        
+    }
+}
+long long int gcd(long long int a,long long int b)
+{
+    if(b==0)
+    return a;
+    else
+    return gcd(b,a%b);
+}
