@@ -1,0 +1,26 @@
+#include <bits/stdc++.h> 
+#include <boost/multiprecision/cpp_int.hpp> 
+using boost::multiprecision::cpp_int; 
+using namespace std; 
+int main() 
+{ 
+    int number,num1;
+    cpp_int num; 
+    while(1)
+    {
+    cin>>number>>num1;
+    if(number==0 && num1==0)
+    {
+        break;
+    }
+    else
+    {
+        num=1;
+        for (int i = 1; i <= num1; i++)
+        {num = num * number;
+        }
+        cout << num << endl;
+    }
+    }
+    return 0; 
+}
