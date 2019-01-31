@@ -1,0 +1,29 @@
+#include <stdio.h>
+#include<iostream>
+using namespace std;
+long long int gcd(long long int a,long long int b);
+int main()
+{
+    long long int n,n2;
+    while(1)
+    {
+    cin>>n>>n2;
+    
+    if(n==0 && n2==0)
+    {
+        break;
+    }
+    else
+    {
+     cout<<(n*n2)/(gcd(n,n2)*gcd(n,n2))<<endl;   
+    }
+    }
+    return 0;
+}
+long long int gcd(long long int a,long long int b)
+{
+    if(b==0)
+    return a;
+    else
+    return gcd(b,a%b);
+}
