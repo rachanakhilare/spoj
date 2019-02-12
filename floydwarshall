@@ -1,0 +1,49 @@
+#include<iostream>
+#include<algorithm>
+#include <stdio.h>
+#include<vector>
+#include<map>
+#include<sstream>
+#include<iomanip>
+#include<math.h>
+#define INF 0.0
+using namespace std;
+int main()
+{
+    int n,m,i,j,k;
+    while(1)
+    {
+        cin>>n;
+        if(n==0)
+        break;
+        cin>>m;
+        double dp[n][n];
+        for(i=0;i<n;i++){
+            for(j=0;j<n;j++)
+            dp[i][j]=INF;
+        }
+        while(m--)
+        {
+            int x,y,w;
+            cin>>x>>y>>w;
+            dp[x-1][y-1]=w;
+            dp[y-1][x-1]=w;
+        }
+        double ans[n][n];
+            for(i=0;i<n;i++){
+                for(j=0;j<n;j++)
+                ans[i][j]=dp[i][j];
+            }  
+        for(k=0;k<n;k++) {   
+                for(i=0;i<n;i++)
+                for(j=0;j<n;j++)
+                if(i==j||j==k||k==i)
+                continue;
+                if(ans[i][k]+ans[k][j]<ans[i][j])
+                ans[i][j]=ans[i][k]+ans[k][j];
+                }
+            
+        cout<<ans[0][n-1]<<" percent"<<endl;
+    }
+    return 0;
+}
