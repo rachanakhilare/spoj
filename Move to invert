@@ -1,0 +1,18 @@
+#include <stdio.h>
+#include<iostream>
+using namespace std;
+int main()
+{
+   long long int i,ans,t;
+   cin>>t;
+   long long int n;
+   for(i=0;i<t;i++)
+   {
+       cin>>n;
+       //cal(a,n);
+       ans=(n*(n+1))/6;
+       cout<<ans<<endl;
+   }
+
+    return 0;
+}
