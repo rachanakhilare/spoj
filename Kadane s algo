@@ -1,0 +1,26 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int n,i,t;
+    cin>>t;
+    while(t--)
+    {
+    cin>>n;
+    int a[n];
+    for(i=0;i<n;i++)
+    {
+        cin>>a[i];
+    }
+    int maxsum=a[0],sum=a[0];
+    for(i=1;i<n;i++)
+    {
+        maxsum=max(a[i],maxsum + a[i]);
+        sum=max(maxsum,sum);
+    }
+    cout<<sum<<"\n";
+    }
+    return 0;
+}
