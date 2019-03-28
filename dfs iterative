@@ -1,0 +1,31 @@
+#include <iostream>
+#include<bits/stdc++.h>
+using namespace std;
+int dfs(int x,vector<int>g[],bool vis[]);
+int main()
+{
+    bool vis[1001];
+    vector<int> g[1001];
+    int n,x,y;
+    cin>>n;
+    for(int i=0;i<n;i++)
+    {
+        cin>>x>>y;
+        g[x].push_back(y);
+        g[y].push_back(x);
+    }
+    dfs(1,g,vis);
+    return 0;
+}
+int dfs(int x,vector<int> g[],bool vis[])
+{
+    vis[x]=true;
+    cout<<x<<" ";
+    for(auto i:g[x])
+    {
+        if(!vis[i])
+        {
+            dfs(i,g,vis);
+        }
+    }
+}
